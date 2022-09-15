@@ -27,11 +27,11 @@
 </div>
 @endif
 
-<form action="{{route('todolist.store')}}" method="POST">
+{{-- <form action="{{route('group.create')}}" >
     @csrf
-    <input type="text" value="{{old('content')}}" class="form-label" placeholder="輸入代辦事項" name="content">
-    <button type="submit" class="btn btn-secondary">新增代辦事項</button>
-</form>
+    <button type="submit" class="btn btn-secondary">新增群組</button>
+</form> --}}
+<a href="{{route('group.create')}}" class="btn btn-secondary">新增群組</a>
 
 <table class="table mb-4">
     <thead>
@@ -51,7 +51,7 @@
         
     
 
-    @foreach ($todolists as $id=>$todolist )
+    {{-- @foreach ($todolists as $id=>$todolist )
 
         <tbody>
             <tr>
@@ -79,26 +79,10 @@
                 </td>
             </tr>
         </tbody>
-        {{-- <ul>
-                <h4>{{$todolist->content}}</h4>
-        <div class="container">
-            {{$todolist->created_at}}&emsp;
-            <a href="{{route('todolist.edit',['todolist' => $todolist -> id])}}" class="btn btn-warning">修改</a>
-            &nbsp;
+        
     
-            &nbsp;
-            <form action="{{route('todolist.destroy',$todolist)}}" method="POST">
-                @csrf
-                @method('delete')
-                <button type="" class="btn btn-danger">刪除</button>
-            </form>
-    
-        </div>
-    
-        </ul> --}}
-    
-    @endforeach
+    @endforeach --}}
 
 </table>
-{{$todolists ->links()}}
+{{-- {{$todolists ->links()}} --}}
 @endsection

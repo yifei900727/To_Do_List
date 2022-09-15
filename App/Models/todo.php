@@ -13,5 +13,5 @@ class todo extends Model
     public function user(){
         return $this -> belongsTo('App\Models\User');
     }
-    protected $fillable = ['content','state'];
+    protected $fillable = ['content','state','user_id'];
 }

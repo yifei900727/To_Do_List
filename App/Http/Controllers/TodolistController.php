@@ -2,24 +2,29 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\Todo;
+// use App\Models\User;
 
 class TodolistController extends Controller
 {
-    // public function index(Request $id){
-
-    //     // $todolists = todo::paginate(5);
-    //     $todolists = auth()->user()->todos->find($id);
-        
-    //     return view('todolist.index',['todolists'=>$todolists]);
-    // }
     public function index(){
 
-        $todolists = todo::paginate(5);
+        // $todolists = todo::paginate(5);
+        $todolists = todo::where('user_id',Auth::user() ->id)->paginate(5);
         
         return view('todolist.index',['todolists'=>$todolists]);
     }
+    // public function index(){
+
+    //     $todolists = todo::paginate(5);
+        
+        
+        
+        
+    //     return view('todolist.index',['todolists'=>$todolists]);
+    // }
 
     public function create(){
         return view('todolist.create');

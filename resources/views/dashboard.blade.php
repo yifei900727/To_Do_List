@@ -1,10 +1,10 @@
 <x-app-layout>
-    <x-slot name="header">
-        {{-- class="font-semibold text-xl text-gray-800 leading-tight" --}}
+    {{-- <x-slot name="header">
+        class="font-semibold text-xl text-gray-800 leading-tight"
         <h2 >
             {{ __('To Do List') }}
         </h2>
-    </x-slot>
+    </x-slot> --}}
     <section class="vh-100" style="background-color: #eee;">
         <div class="container py-5 h-100">
             <div class="row d-flex justify-content-center align-items-center">

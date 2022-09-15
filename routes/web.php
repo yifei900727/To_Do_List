@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TodolistController;
-
+use App\HTTP\Controllers\GroupController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,6 +14,7 @@ use App\Http\Controllers\TodolistController;
 |
 */
 Route::resource('todolist',TodolistController::class);
+Route::resource('group',GroupController::class);
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -22,5 +23,5 @@ Route::get('/',[TodolistController::class,'index'])->middleware(['auth'])->name(
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->middleware(['auth'])->name('dashboard');
-
-// require __DIR__.'/auth.php';
+Route::get('/group', [GroupController::class,'store'])->middleware(['auth'])->name('group');
+require __DIR__.'/auth.php';
